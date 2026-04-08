@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolNet Apex — Register for Early Access</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #010D21;
+  --bg-card: #081929;
+  --bg-card-hover: #0f2236;
+  --border: #1e293b;
+  --border-accent: #2563eb;
+  --text: #e2e8f0;
+  --text-dim: #94a3b8;
+  --text-bright: #f8fafc;
+  --accent: #3b82f6;
+  --accent-glow: rgba(59, 130, 246, 0.15);
+  --green: #22c55e;
+  --amber: #f59e0b;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── HEADER ── */
+header {
+  padding: 60px 0 20px;
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 28px;
+}
+
+.logo img {
+  height: 80px;
+}
+
+h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+h1 span {
+  background: linear-gradient(135deg, var(--accent), #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 17px;
+  color: var(--text-dim);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* ── WHAT YOU GET ── */
+.benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 540px) {
+  .benefits { grid-template-columns: 1fr; }
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.benefit-icon {
+  color: var(--green);
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.benefit-item span {
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.benefit-item strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ── STATS BAR ── */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 24px 0;
+  margin-bottom: 48px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 4px;
+}
+
+/* ── FORM SECTION ── */
+.form-section {
+  margin-bottom: 48px;
+}
+
+.form-section h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--accent);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px 32px;
+}
+
+@media (max-width: 540px) {
+  .form-card { padding: 28px 20px; }
+}
+
+/* ── FORM ELEMENTS ── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 540px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+label .required {
+  color: var(--accent);
+  margin-left: 2px;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-bright);
+  font-family: var(--font-body);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder {
+  color: #4a5568;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2394a3b8' d='M1.4 0L6 4.6 10.6 0 12 1.4 6 7.4 0 1.4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+select option {
+  background: var(--bg-card);
+  color: var(--text);
+}
+
+/* ── CHECKBOXES ── */
+.checkbox-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+@media (max-width: 540px) {
+  .checkbox-group { grid-template-columns: 1fr; }
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.checkbox-item:hover {
+  background: var(--bg-card-hover);
+}
+
+.checkbox-item input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.checkbox-item input[type="checkbox"]:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.checkbox-item input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--text-bright);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-item span {
+  font-size: 14px;
+  color: var(--text-dim);
+  user-select: none;
+}
+
+/* ── SUBMIT ── */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  margin-top: 32px;
+  background: var(--accent);
+  color: var(--text-bright);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover {
+  background: #2563eb;
+}
+
+.submit-btn:active {
+  transform: scale(0.99);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── FORM STATES ── */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.form-success .check-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.12);
+  border: 2px solid var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 24px;
+}
+
+.form-success h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 10px;
+}
+
+.form-success p {
+  color: var(--text-dim);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.form-error {
+  display: none;
+  padding: 12px 16px;
+  margin-top: 16px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  font-size: 13px;
+  color: #fca5a5;
+  text-align: center;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 32px 0 48px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+  <div class="logo">
+    <a href="/"><img src="solnet-logo.png" alt="SolNet"></a>
+  </div>
+  <h1>Register for <span>Early Access</span></h1>
+  <p class="subtitle">Apex is the only governed AI agent runtime. We're selecting testers who want security that's structural, not optional.</p>
+</header>
+
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-value">338</div>
+    <div class="stat-label">Tests passing</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">10</div>
+    <div class="stat-label">CVEs mitigated</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">26</div>
+    <div class="stat-label">Security checks</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">4</div>
+    <div class="stat-label">Security layers</div>
+  </div>
+</div>
+
+<div class="benefits">
+  <div class="benefit-item">
+    <span class="benefit-icon">✓</span>
+    <span><strong>Cryptographic identity</strong> — every agent signed at birth via AIC</span>
+  </div>
+  <div class="benefit-item">
+    <span class="benefit-icon">✓</span>
+    <span><strong>Spawn authentication</strong> — no valid token, no execution</span>
+  </div>
+  <div class="benefit-item">
+    <span class="benefit-icon">✓</span>
+    <span><strong>Guardian agent</strong> — monitors behaviour in real time</span>
+  </div>
+  <div class="benefit-item">
+    <span class="benefit-icon">✓</span>
+    <span><strong>Adaptive memory</strong> — learns what matters, forgets what doesn't</span>
+  </div>
+  <div class="benefit-item">
+    <span class="benefit-icon">✓</span>
+    <span><strong>Model agnostic</strong> — Anthropic, OpenAI, or any provider</span>
+  </div>
+  <div class="benefit-item">
+    <span class="benefit-icon">✓</span>
+    <span><strong>Snapshots</strong> — full system state, restored in seconds</span>
+  </div>
+  <div class="benefit-item">
+    <span class="benefit-icon">✓</span>
+    <span><strong>Migration engine</strong> — move from OpenClaw in one command</span>
+  </div>
+  <div class="benefit-item">
+    <span class="benefit-icon">✓</span>
+    <span><strong>Immune system</strong> — learns from every threat, protects every user</span>
+  </div>
+</div>
+
+<div class="form-section">
+  <h2>Apply</h2>
+  <div class="form-card">
+
+    <!-- Success state -->
+    <div class="form-success" id="formSuccess">
+      <div class="check-icon">✓</div>
+      <h3>Application received</h3>
+      <p>We'll review your details and be in touch when your access is ready. No timeline promises — we ship when it's solid.</p>
+    </div>
+
+    <!-- Form -->
+    <div id="formFields">
+      <div class="form-row">
+        <div>
+          <label for="firstName">First name <span class="required">*</span></label>
+          <input type="text" id="firstName" placeholder="First name" required>
+        </div>
+        <div>
+          <label for="lastName">Last name <span class="required">*</span></label>
+          <input type="text" id="lastName" placeholder="Last name" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="source">How did you hear about Apex? <span class="required">*</span></label>
+        <select id="source" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="BAIA">BAIA</option>
+          <option value="DeepStation">DeepStation</option>
+          <option value="X / Twitter">X / Twitter</option>
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="Web search">Web search</option>
+          <option value="Edge AI Hub">Edge AI Hub</option>
+          <option value="Direct contact">Direct contact</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>What agent tooling do you currently use?</label>
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" value="OpenClaw">
+            <span>OpenClaw</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" value="LangChain">
+            <span>LangChain</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" value="AutoGPT / AgentGPT">
+            <span>AutoGPT / AgentGPT</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" value="CrewAI">
+            <span>CrewAI</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" value="Custom / self-built">
+            <span>Custom / self-built</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" value="None — new to agents">
+            <span>None — new to agents</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" value="Other">
+            <span>Other</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-error" id="formError">Something went wrong. Please try again or email <a href="mailto:sol@solnet.world?subject=Apex Early Access" style="color:#60a5fa;">sol@solnet.world</a>.</div>
+
+      <button type="button" class="submit-btn" id="submitBtn" onclick="submitForm()">Submit Application</button>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p><a href="/">← Back to solnet.world</a></p>
+  <p style="margin-top: 8px;">SolNet · Built in the UK</p>
+</footer>
+
+</div>
+
+<script>
+async function submitForm() {
+  const btn = document.getElementById('submitBtn');
+  const error = document.getElementById('formError');
+  error.style.display = 'none';
+
+  // Gather values
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName = document.getElementById('lastName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const source = document.getElementById('source').value;
+  const tooling = [...document.querySelectorAll('.checkbox-group input:checked')]
+    .map(cb => cb.value).join(', ');
+
+  // Validate
+  if (!firstName || !lastName || !email || !source) {
+    error.textContent = 'Please fill in all required fields.';
+    error.style.display = 'block';
+    return;
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    error.textContent = 'Please enter a valid email address.';
+    error.style.display = 'block';
+    return;
+  }
+
+  // Submit
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+
+  try {
+    // Replace GOOGLE_APPS_SCRIPT_URL with your deployed Apps Script web app URL
+    const ENDPOINT = 'GOOGLE_APPS_SCRIPT_URL';
+
+    await fetch(ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        source,
+        tooling: tooling || 'None selected',
+        timestamp: new Date().toISOString()
+      })
+    });
+
+    // Show success (no-cors means we can't read response, so we trust it went through)
+    document.getElementById('formFields').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+
+  } catch (err) {
+    error.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Submit Application';
+  }
+}
+</script>
+
+</body>
+</html>
