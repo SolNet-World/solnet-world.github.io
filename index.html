@@ -49,16 +49,37 @@ body::before {
 }
 
 .container {
-  max-width: 1040px;
+  max-width: 860px;
   margin: 0 auto;
   padding: 0 24px;
   position: relative;
   z-index: 1;
 }
 
+/* ── NAV ── */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 0;
+}
+
+nav a {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #60a5fa;
+}
+
 /* ── HEADER ── */
 header {
-  padding: 32px 0 8px;
+  padding: 20px 0 10px;
   text-align: center;
 }
 
@@ -66,7 +87,7 @@ header {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
 }
 
 .logo-icon {
@@ -93,11 +114,11 @@ header {
 }
 
 h1 {
-  font-size: clamp(36px, 5vw, 52px);
+  font-size: clamp(36px, 5vw, 56px);
   font-weight: 700;
   color: var(--text-bright);
   line-height: 1.15;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   letter-spacing: -1px;
 }
 
@@ -109,12 +130,12 @@ h1 span {
 }
 
 .subtitle {
-  font-size: 18px;
+  font-size: 19px;
   color: var(--text-dim);
-  max-width: 100%;
-  margin: 0 auto 28px;
+  max-width: 580px;
+  margin: 0 auto 40px;
   font-weight: 300;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* ── STATS BAR ── */
@@ -123,7 +144,7 @@ h1 span {
   justify-content: center;
   gap: 40px;
   padding: 24px 0;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   flex-wrap: wrap;
@@ -150,7 +171,7 @@ h1 span {
 
 /* ── SECTION ── */
 section {
-  margin-bottom: 48px;
+  margin-bottom: 64px;
 }
 
 h2 {
@@ -188,7 +209,6 @@ h2 {
 }
 
 .feature-card.highlight {
- 
   border-color: var(--border-accent);
   background: linear-gradient(135deg, var(--bg-card), rgba(37, 99, 235, 0.08));
 }
@@ -198,6 +218,7 @@ h2 {
   margin-bottom: 12px;
   display: block;
 }
+
 .feature-card h3 {
   font-size: 16px;
   font-weight: 600;
@@ -445,19 +466,23 @@ header, section, .download-section, footer {
   animation: fadeUp 0.5s ease-out both;
 }
 
-section:nth-child(2) { animation-delay: 0.1s; }
-section:nth-child(3) { animation-delay: 0.15s; }
-section:nth-child(4) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.1s; }
+section:nth-child(4) { animation-delay: 0.15s; }
+section:nth-child(5) { animation-delay: 0.2s; }
 </style>
 </head>
 <body>
 <div class="container">
 
+<nav>
+  <a href="/register.html">Register →</a>
+</nav>
+
 <header>
   <div class="logo-mark">
-    <img src="solnet-logo.png" alt="SolNet" style="height: 120px;">
+    <img src="solnet-logo.png" alt="SolNet" style="height: 240px;">
   </div>
-  <h1>Secure AI agents that <span>earn your trust</span></h1>
+  <h1>Secure AI agents<br>that <span>earn your trust</span></h1>
   <p class="subtitle">Apex is a security-first AI agent runtime with cryptographic identity, spawn authorisation tokens, adaptive memory, and a self-hardening immune system.</p>
 </header>
 
@@ -558,9 +583,9 @@ section:nth-child(4) { animation-delay: 0.2s; }
   ║   Secure AI Agent Runtime            ║
   ╚══════════════════════════════════════╝</span>
 
-<span class="output">  ? What's your name? </span><span class="highlight">Your name</span>
+<span class="output">  ? What's your name? </span><span class="highlight">Sol</span>
 <span class="output">  ? Which LLM provider? </span><span class="highlight">Both (Anthropic + OpenAI)</span>
-<span class="output">  ? Name your first agent: </span><span class="highlight">Your primary agent name</span>
+<span class="output">  ? Name your first agent: </span><span class="highlight">main</span>
 
 <span class="success">  ✔ Configuration saved
   ✔ Agent workspace created
@@ -601,7 +626,7 @@ section:nth-child(4) { animation-delay: 0.2s; }
 <div class="download-section">
   <h2>Early Access</h2>
   <p>Apex is in pre-release testing with a small group of experienced AI practitioners.<br>Looking for people who will push it, break it, and tell us what's missing.</p>
-  <a href="/register.html" class="btn-download" target="_blank">
+  <a href="/register.html" class="btn-download">
     ✉&ensp;Apply for Early Access
   </a>
   <div class="version-note">Linux / WSL2 &middot; No cost &middot; No NDA</div>
@@ -612,5 +637,15 @@ section:nth-child(4) { animation-delay: 0.2s; }
   <ul class="feedback-list">
     <li>Does the security model feel robust, or theatrical? Try to break it.</li>
     <li>Where does the setup experience frustrate you? What took too long or felt unclear?</li>
-    <li>How does the memory system behave after 10-20 conversations? Does the agent actually learn?</li>
-    <li>What's missing that would make you switch
+    <li>How does the memory system behave after 10–20 conversations? Does the agent actually learn?</li>
+    <li>What's missing that would make you switch from your current agent setup?</li>
+  </ul>
+</section>
+
+<footer>
+  <p>SolNet &middot; <a href="https://solnet.world">solnet.world</a> &middot; Built in the UK</p>
+</footer>
+
+</div>
+</body>
+</html>
